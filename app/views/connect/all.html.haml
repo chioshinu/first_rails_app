@@ -1,0 +1,62 @@
+#wrapper
+  #header
+    .div-container
+      .logo
+        %h1
+          %a{:href=>"/"}
+            %img{:src=>"/images/logo.png"}
+      .user-menu
+        .user-info
+          .user-menu-avatar
+            %img{:src=>"/images/no_avatar.png"}
+          .user-menu-username Head Admin
+          %ul{:class=>"sub-menu-admin"}
+            %li
+              %a{:class=>"with-border", :href=>"#"} Edit Profile
+            %li
+              %a{:href=>"#"} Logout
+            %li
+              %a{:href=>"#"} System Connections
+      .header-menu
+        %ul{:id=>"menu"}
+          %li{:id=>"home-page"}
+            %a{:href=>"#"} Home
+          %li{:id=>"convene"}
+            %a{:href=>"#"} Convene
+          %li{:id=>"connect", :class=>"active"}
+            %a{:href=>"#"} Connect
+          %li{:id=>"collaborate"}
+            %a{:href=>"#"} Collaborate
+          %li{:id=>"careers"}
+            %a{:href=>"#"} Careers
+  #main-content
+    .div-container
+      .facebook-refresh
+        .message Please refresh permissions for system Facebook connection
+        .refresh-button
+          %a{:id=>"facebook-connect", :href=>"#"} Refresh
+      .connect-content
+        %h2 Connect with other VX members
+        #filter
+          .filter-block
+            %h3 Member filter
+            %ul{:class=>"member-filter-links"}
+              %li
+                %a{:href=>"#"} New members
+              %li
+                %a{:href=>"#"} Recently viewed
+              %li
+                %a{:href=>"#"} Followed people
+              %form{:method=>"post", :action=>""}
+                %fieldset{:class=>"member-filter"}
+                  %ul
+                    %li
+                      %input{:id=>"connect_filter_name", :name=>"connect_filter[name]", :type=>"text", :placeholder=>"Name..."}
+                %input{:class=>"search-button", :type=>"submit", :value=>"Apply filters"}
+              %a{:class=>"reset-filter", :href=>"#"} Reset Filter
+          %a{:id=>"invite-member", :href=>"#"} Invite member
+          %a{:id=>"new-member", :href=>"#"} Add new member
+        #right
+        #content
+
+  #footer

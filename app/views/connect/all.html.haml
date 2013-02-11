@@ -57,6 +57,104 @@
           %a{:id=>'invite-member', :href=>'#'} Invite member
           %a{:id=>'new-member', :href=>'#'} Add new member
         #right
+          %h3 Social Stream
+          %ul#user-stream
+            %li.stream_post
+              .company-stream-post-div
+                .company-stream-post-icon
+                  %img.post-icon{:src=>'/images/TwitterIcon.png'}
+                  %img.avatar{:src=>'/images/no_avatar.png'}
+                .company-stream-post-name
+                  %a.username{:href=>'#'}Eli Regardo
+                  .date-via November 27, via twitter
+              .company-post-text
+                .message @ToniPanetta PS- I interviewed Doug Jackson this am for a video series we're doing for Project C.U.R.E.
+          #user-load-more.load-more
+            %a{:href=>'#'} Load More
         #content
-
+          #select-view
+            %span Full view
+            %span.delimeter
+            %a{:href=>'#'} Short View
+            %form#per-page-form{:method=>'post', :action=>'#'}
+              %select#connect_filter_per_page{:name=>'connect_filter[per_page]'}
+                %option{:value=>'10'}10
+                %option{:value=>'20', :selected=>'selected'}20
+                %option{:value=>'50'}50
+                %option{:value=>'50'}50
+          %form#users{:method=>'post', :action=> '#'}
+            %table
+              %thead
+                %tr.titles
+                  %td.title-checkbox{:align=>'left'}
+                    %input#select_all{:type=>'checkbox'}
+                  %td{:align=>'left'}
+                    %a{:href=>'#', :title=>'Sort by Name from A to Z'}Name
+                  %td{:align=>'left'}
+                    %a{:href=>'#', :title=>'Sort by Company from A to Z'}Company
+                  %td{:align=>'left'}
+                    %a{:href=>'#', :title=>'Sort by City from A to Z'}City
+                  %td{:align=>'left'}
+                    %a{:href=>'#', :title=>'Sort by State from A to Z'}State
+                  %td{:align=>'left'}
+                    %a{:href=>'#', :title=>'Sort by Follow from A to Z'}Follow
+              %tbody
+                %tr.dark-tr
+                  %td
+                    .user-checkbox-div
+                      %input.user_checkbox{:type=>'checkbox', :value=>'10', :name=>'user[]'}
+                      %img.avatar{:src=>'/images/no_avatar.png'}
+                  %td
+                    .user_name
+                      %a{:href=>'#'} Pam Jeffords
+                    .position Partner
+                    .user-email
+                      %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
+                    .founding_member Founding Member
+                  %td.user-company
+                    %a{:href=>'#', :align=>'center'} Mercer
+                  %td.user-city Highlands Ranch
+                  %td.user-state CO
+                  %td.user-status
+                    %a{:href=>'#'} Follow
+                %tr.light-tr
+                  %td
+                    .user-checkbox-div
+                      %input.user_checkbox{:type=>'checkbox', :value=>'10', :name=>'user[]'}
+                      %img.avatar{:src=>'/images/no_avatar.png'}
+                  %td
+                    .user_name
+                      %a{:href=>'#'} Pam Jeffords
+                    .position Partner
+                    .user-email
+                      %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
+                    .founding_member Founding Member
+                  %td.user-company
+                    %a{:href=>'#', :align=>'center'} Mercer
+                  %td.user-city Highlands Ranch
+                  %td.user-state CO
+                  %td.user-status
+                    %a{:href=>'#'} Follow
+            .connect-bottom-panel
+              %select#group_action{:name=>'group_action'}
+                %option{:value=>''}Select action
+                %option{:value=>'follow'}Follow
+                %option{:value=>'un_follow'}Unfollow
+                %option{:value=>'delete'}Delete
+            .pagination
+              %a.prev-page{:href=>'#'}<< Prev
+              %ul
+                %li
+                  %a.page{:href=>'#'}1
+                %li
+                  %a.page{:href=>'#'}2
+                %li
+                  %a.page{:href=>'#'}3
+              %select.page_selector{:name=>'page'}
+                %option{:value=>'1'}1
+                %option{:value=>'2'}1
+                %option{:value=>'3'}1
+                %option{:value=>'4'}1
+                %option{:value=>'5'}1
+              %a.next-page{:href=>'#'}Next >>
   #footer

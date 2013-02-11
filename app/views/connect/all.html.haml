@@ -10,13 +10,14 @@
           .user-menu-avatar
             %img{:src=>'/images/no_avatar.png'}
           .user-menu-username Head Admin
-          %ul{:class=>'sub-menu-admin'}
-            %li
-              %a{:class=>'with-border', :href=>'#'} Edit Profile
-            %li
-              %a{:href=>'#'} Logout
-            %li
-              %a{:href=>'#'} System Connections
+          .sub-menu-admin
+            %ul{:class=>'sub-menu-links'}
+              %li
+                %a{:class=>'with-border', :href=>'#'} Edit Profile
+              %li
+                %a{:href=>'#'} Logout
+              %li
+                %a{:href=>'#'} System Connections
       .header-menu
         %ul{:id=>'menu'}
           %li{:id=>'home-page'}
@@ -86,17 +87,17 @@
             %table
               %thead
                 %tr.titles
-                  %td.title-checkbox{:align=>'left'}
+                  %td.title-checkbox{:align=>'center'}
                     %input#select_all{:type=>'checkbox'}
-                  %td{:align=>'left'}
+                  %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by Name from A to Z'}Name
-                  %td{:align=>'left'}
+                  %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by Company from A to Z'}Company
-                  %td{:align=>'left'}
+                  %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by City from A to Z'}City
-                  %td{:align=>'left'}
+                  %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by State from A to Z'}State
-                  %td{:align=>'left'}
+                  %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by Follow from A to Z'}Follow
               %tbody
                 %tr.dark-tr
@@ -111,11 +112,11 @@
                     .user-email
                       %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
                     .founding_member Founding Member
-                  %td.user-company
-                    %a{:href=>'#', :align=>'center'} Mercer
-                  %td.user-city Highlands Ranch
-                  %td.user-state CO
-                  %td.user-status
+                  %td.user-company{:align=>'center'}
+                    %a{:href=>'#'} Mercer
+                  %td.user-city{:align=>'center'}y Highlands Ranch
+                  %td.user-state{:align=>'center'} CO
+                  %td.user-status{:align=>'center'}
                     %a{:href=>'#'} Follow
                 %tr.light-tr
                   %td
@@ -129,11 +130,11 @@
                     .user-email
                       %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
                     .founding_member Founding Member
-                  %td.user-company
+                  %td.user-company{:align=>'center'}
                     %a{:href=>'#', :align=>'center'} Mercer
-                  %td.user-city Highlands Ranch
-                  %td.user-state CO
-                  %td.user-status
+                  %td.user-city{:align=>'center'} Highlands Ranch
+                  %td.user-state{:align=>'center'} CO
+                  %td.user-status{:align=>'center'}
                     %a{:href=>'#'} Follow
             .connect-bottom-panel
               %select#group_action{:name=>'group_action'}
@@ -141,20 +142,38 @@
                 %option{:value=>'follow'}Follow
                 %option{:value=>'un_follow'}Unfollow
                 %option{:value=>'delete'}Delete
-            .pagination
-              %a.prev-page{:href=>'#'}<< Prev
-              %ul
-                %li
-                  %a.page{:href=>'#'}1
-                %li
-                  %a.page{:href=>'#'}2
-                %li
-                  %a.page{:href=>'#'}3
-              %select.page_selector{:name=>'page'}
-                %option{:value=>'1'}1
-                %option{:value=>'2'}1
-                %option{:value=>'3'}1
-                %option{:value=>'4'}1
-                %option{:value=>'5'}1
-              %a.next-page{:href=>'#'}Next >>
+              .pagination
+                %table
+                  %tbody
+                    %tr
+                      %td
+                        %a.prev-page{:href=>'#'}«Prev
+                      %td
+                        %span.unactive 1
+                      %td
+                        %a.page{:href=>'#'}2
+                      %td
+                        %a.page{:href=>'#'}3
+                      %td
+                        %select.page_selector{:name=>'page'}
+                          %option{:value=>'1'}1
+                          %option{:value=>'2'}1
+                          %option{:value=>'3'}1
+                          %option{:value=>'4'}1
+                          %option{:value=>'5'}1
+                      %td
+                        %a.next-page{:href=>'#'}Next»
   #footer
+    .div-container
+      .footer-menu
+        %ul.footer-menu-items
+          %li
+            %a{:href=>'#'}About Us
+          %li
+            %a{:href=>'#'}Managing Directors
+          %li
+            %a{:href=>'#'}Contact Us
+          %li
+            %a{:href=>'#'}F.A.Q.
+
+        .copyright © TheVX.com, 2013. All Rights Reserved

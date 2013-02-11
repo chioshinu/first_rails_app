@@ -100,42 +100,45 @@
                   %td{:align=>'center'}
                     %a{:href=>'#', :title=>'Sort by Follow from A to Z'}Follow
               %tbody
-                %tr.dark-tr
-                  %td
-                    .user-checkbox-div
-                      %input.user_checkbox{:type=>'checkbox', :value=>'10', :name=>'user[]'}
-                      %img.avatar{:src=>'/images/no_avatar.png'}
-                  %td
-                    .user_name
-                      %a{:href=>'#'} Pam Jeffords
-                    .position Partner
-                    .user-email
-                      %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
-                    .founding_member Founding Member
-                  %td.user-company{:align=>'center'}
-                    %a{:href=>'#'} Mercer
-                  %td.user-city{:align=>'center'}y Highlands Ranch
-                  %td.user-state{:align=>'center'} CO
-                  %td.user-status{:align=>'center'}
-                    %a{:href=>'#'} Follow
-                %tr.light-tr
-                  %td
-                    .user-checkbox-div
-                      %input.user_checkbox{:type=>'checkbox', :value=>'10', :name=>'user[]'}
-                      %img.avatar{:src=>'/images/no_avatar.png'}
-                  %td
-                    .user_name
-                      %a{:href=>'#'} Pam Jeffords
-                    .position Partner
-                    .user-email
-                      %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
-                    .founding_member Founding Member
-                  %td.user-company{:align=>'center'}
-                    %a{:href=>'#', :align=>'center'} Mercer
-                  %td.user-city{:align=>'center'} Highlands Ranch
-                  %td.user-state{:align=>'center'} CO
-                  %td.user-status{:align=>'center'}
-                    %a{:href=>'#'} Follow
+                - @users.each do |user|
+                  %tr{:class => "#{user.id.odd? ? 'dark-tr' : 'light-tr'}" }
+                    %td
+                      .user-checkbox-div
+                        %input.user_checkbox{:type=>'checkbox', :value=> "#{user.id}", :name=>'user[]'}
+                        %img.avatar{:src=>'/images/no_avatar.png'}
+                    %td
+                      .user_name
+                        %a{:href=>'#'} #{user.full_name}
+                      .position #{user.position}
+                      .user-email
+                        %a{:href=>'mailto:pamjeffords@thevx.com'} #{user.email}
+                      - if user.is_founding
+                        .founding_member Founding Member
+                    %td.user-company{:align=>'center'}
+                      %a{:href=>'#'} #{user.company.name}
+                    %td.user-city{:align=>'center'} #{user.city}
+                    %td.user-state{:align=>'center'} #{user.state}
+                    %td.user-status{:align=>'center'}
+                      %a{:href=>'#'} Follow
+
+                -#%tr.light-tr
+                -#  %td
+                -#    .user-checkbox-div
+                -#      %input.user_checkbox{:type=>'checkbox', :value=>'10', :name=>'user[]'}
+                -#      %img.avatar{:src=>'/images/no_avatar.png'}
+                -#  %td
+                -#    .user_name
+                -#      %a{:href=>'#'} Pam Jeffords
+                -#    .position Partner
+                -#    .user-email
+                -#      %a{:href=>'mailto:pamjeffords@thevx.com'}pamjeffords@thevx.com
+                -#    .founding_member Founding Member
+                -#  %td.user-company{:align=>'center'}
+                -#    %a{:href=>'#', :align=>'center'} Mercer
+                -#  %td.user-city{:align=>'center'} Highlands Ranch
+                -#  %td.user-state{:align=>'center'} CO
+                -#  %td.user-status{:align=>'center'}
+                -#    %a{:href=>'#'} Follow
             .connect-bottom-panel
               %select#group_action{:name=>'group_action'}
                 %option{:value=>''}Select action

@@ -10,24 +10,24 @@
           .user-menu-avatar
             %img{:src=>'/images/no_avatar.png'}
           .user-menu-username Head Admin
-          %ul.sub-menu-admin
+          %ul{:class=>'sub-menu-admin'}
             %li
-              %a.with-border{:href=>'#'} Edit Profile
+              %a{:class=>'with-border', :href=>'#'} Edit Profile
             %li
               %a{:href=>'#'} Logout
             %li
               %a{:href=>'#'} System Connections
       .header-menu
-        %ul#menu
-          %li#home-page
+        %ul{:id=>'menu'}
+          %li{:id=>'home-page'}
             %a{:href=>'#'} Home
-          %li#convene
+          %li{:id=>'convene'}
             %a{:href=>'#'} Convene
-          %li#connect.active
+          %li{:id=>'connect', :class=>'active'}
             %a{:href=>'#'} Connect
-          %li#collaborate
+          %li{:id=>'collaborate'}
             %a{:href=>'#'} Collaborate
-          %li#careers
+          %li{:id=>'careers'}
             %a{:href=>'#'} Careers
   #main-content
     .div-container
@@ -40,7 +40,7 @@
         #filter
           .filter-block
             %h3 Member filter
-            %ul.member-filter-links
+            %ul{:class=>'member-filter-links'}
               %li
                 %a{:href=>'#'} New members
               %li
@@ -48,14 +48,14 @@
               %li
                 %a{:href=>'#'} Followed people
               %form{:method=>'post', :action=>''}
-                %fieldset.member-filter
+                %fieldset{:class=>'member-filter'}
                   %ul
                     %li
-                      %input#connect_filter_name{:name=>'connect_filter[name]', :type=>'text', :placeholder=>'Name...'}
-                %input.search-button{:type=>'submit', :value=>'Apply filters'}
-              %a.reset-filter{:href=>'#'} Reset Filter
-          %a#invite-member{:href=>'#'} Invite member
-          %a#new-member{:href=>'#'} Add new member
+                      %input{:id=>'connect_filter_name', :name=>'connect_filter[name]', :type=>'text', :placeholder=>'Name...'}
+                %input{:class=>'search-button', :type=>'submit', :value=>'Apply filters'}
+              %a{:class=>'reset-filter', :href=>'#'} Reset Filter
+          %a{:id=>'invite-member', :href=>'#'} Invite member
+          %a{:id=>'new-member', :href=>'#'} Add new member
         #right
         #content
 

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
+  <component name="DataSourceManagerImpl" compressed="false" hash="9878729" />
+=======
   <component name="DataSourceManagerImpl" compressed="false" hash="3190995473" />
+>>>>>>> e2237f8731aa8b20cc901bd4950a8012f92832b6
 </project>
 

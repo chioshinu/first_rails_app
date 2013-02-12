@@ -1,19 +1,31 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  first_name: MyString
+  first_name: MyString2
   last_name: MyString
   email: MyString
   city: MyString
   state: MyString
   position: MyString
-  is_founding: false
+  is_founding: true
+  company: two
 
 two:
-  first_name: MyString
+  first_name: MyString3
+  last_name: MyString
+  email: MyString
+  city: MyString
+  state: MyString
+  position: MyString
+  is_founding: true
+  company: one
+
+three:
+  first_name: MyString4
   last_name: MyString
   email: MyString
   city: MyString
   state: MyString
   position: MyString
   is_founding: false
+  company: one

@@ -1,4 +1,6 @@
 FirstApp::Application.routes.draw do
+  resources :scaffs
+
   get "connect/all"
 
   get "connect/userdetail"

@@ -1,0 +1,21 @@
+%h1 Listing scaffs
+
+%table
+  %tr
+    %th Name
+    %th Cat
+    %th
+    %th
+    %th
+
+  - @scaffs.each do |scaff|
+    %tr
+      %td= scaff.name
+      %td= scaff.cat
+      %td= link_to 'Show', scaff
+      %td= link_to 'Edit', edit_scaff_path(scaff)
+      %td= link_to 'Destroy', scaff, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Scaff', new_scaff_path

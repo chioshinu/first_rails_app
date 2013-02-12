@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @scaff.name
+%p
+  %b Cat:
+  = @scaff.cat
+
+= link_to 'Edit', edit_scaff_path(@scaff)
+\|
+= link_to 'Back', scaffs_path

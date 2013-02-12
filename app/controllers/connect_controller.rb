@@ -4,6 +4,7 @@ class ConnectController < ApplicationController
   end
 
   def userdetail
+
   end
 
 end

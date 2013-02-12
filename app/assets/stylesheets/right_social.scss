@@ -1,0 +1,65 @@
+#right {
+  float: right;
+  width: 200px;
+  padding: 9px;
+  @include white-block;
+  margin: 20px 0 10px 10px;
+
+  h3{
+    @extend .block-h3;
+  }
+
+  .stream_post{
+    overflow: hidden;
+    border-bottom: 1px dotted #D6D6D6;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    .company-stream-post-div{
+      overflow: hidden;
+      height: 45px;
+
+      .company-stream-post-icon{
+        position: relative;
+        float: left;
+        width: 40px;
+
+        .post-icon {
+          position: absolute;
+          bottom: -2px;
+          right: -2px;
+        }
+      }
+      .company-stream-post-name {
+        float: left;
+        width: 120px;
+        padding: 0 5px;
+      }
+
+      a.username {
+        font: bold 14px Tahoma;
+        color: $color-font-orange;
+        text-decoration: underline;
+      }
+
+      .date-via {
+        color: $color-font-grey-soft;
+        font: 11px Arial;
+      }
+
+    }
+    .company-post-text .message{
+      font: 12px Arial;
+      color:  $color-font-grey;
+    }
+  }
+  .load-more {
+    margin: 20px 0 10px;
+    text-align: center;
+
+    a{
+      font: 12px Arial;
+      color: $color-green;
+    }
+  }
+}

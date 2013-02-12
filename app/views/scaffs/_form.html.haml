@@ -1,0 +1,16 @@
+= form_for @scaff do |f|
+  - if @scaff.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@scaff.errors.count, "error")} prohibited this scaff from being saved:"
+      %ul
+        - @scaff.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :cat
+    = f.number_field :cat
+  .actions
+    = f.submit 'Save'

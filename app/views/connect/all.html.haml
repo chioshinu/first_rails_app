@@ -1,3 +1,6 @@
+- content_for(:head) do
+  = #javascript_include_tag 'some.js'
+
 #wrapper
   #header
     .div-container
@@ -80,7 +83,7 @@
             %form#per-page-form{:method=>'post', :action=>'#'}
               = select_tag('connect_filter[per_page]', options_for_select([['10',10], ['20', 20], ['50', 50], ['100', 100]], 20))
 
-          %form#users{:method=>'post', :action=> '#'}
+          %form#users{:method=>'post', :action=> connect_delete_path }
             %table
               %thead
                 %tr.titles
@@ -117,6 +120,8 @@
                     %td.user-state{:align=>'center'} #{user.state}
                     %td.user-status{:align=>'center'}
                       %a{:href=>'#'} Follow
+                      - user.follow.each do |follow|
+                        #{follow.target_id}
             .connect-bottom-panel
               = select_tag('group_action', options_for_select([['Select action', ''], %w(Follow follow), %w(Unfollow un_follow), %w(Delete delete)]))
 

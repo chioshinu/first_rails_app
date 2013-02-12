@@ -1,9 +1,10 @@
 FirstApp::Application.routes.draw do
   resources :scaffs
 
-  get "connect/all"
-
+  match 'connect/all' => 'Connect#all', as: 'connect_all'
   get "connect/userdetail"
+
+  match 'connect/destroy' => 'Connect#destroy', as: 'connect_delete'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
